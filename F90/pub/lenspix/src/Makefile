@@ -3,8 +3,8 @@
 target=liblenspix.a
 
 # complier and options
-FC = ifort
-FLAG = -qopenmp -ip -fpp -fPIC
+FC = gfortran
+FLAG = -fopenmp -O2 -cpp -fPIC
 #DBAG = -check all -std -gen_interfaces -fpe0 -ftrapuv -traceback
 FLAGS = $(FLAG) $(DBAG)
 
