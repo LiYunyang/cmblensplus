@@ -6,16 +6,17 @@
 target = libhp.a
 
 ## Complier and options ##
-FC = ifort
+FC = ifort -diag-disable=10448
 FLAG = -O3 -fpp -fPIC -qopenmp
 #DBAG = -check all -std -gen_interfaces -fpe0 -ftrapuv -traceback
 FLAGS = $(FLAG) $(DBAG)
 
 ## Directories ##
 flib = ../
-healpix = ${flib}/pub/Healpix
-cfitsio = ${flib}/pub/cfitsio
+healpix = /home/yyli/software/Healpix_3.83
+cfitsio = /cvmfs/spt.opensciencegrid.org/py3-v5/RHEL_9_x86_64/lib/
 LAPACK  = ${flib}/pub/LAPACK95/
+# LAPACK = /cvmfs/spt.opensciencegrid.org/py3-v5/RHEL_9_x86_64/lib/
 
 MODD= -I${healpix}/include -I$(LAPACK)/mod -I${flib}/mod
 LIBD= -L${healpix}/lib -L${cfitsio} -L$(LAPACK)/lib -L${flib}/lib

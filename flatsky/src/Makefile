@@ -13,7 +13,8 @@ FLAGS = $(FLAG) $(DBAG)
 
 ## Directories ##
 floc = ../
-flib = ../../F90/
+# flib = ../../F90/
+flib="/home/yyli/spt/cmblensplus/F90"
 FFTW = ${flib}/pub/FFTW/
 MODD = -I$(FFTW)/api -I$(flib)/mod
 LIBD = -L$(FFTW) -L$(flib)/lib

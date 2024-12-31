@@ -3,15 +3,17 @@
 target=liblenspix.a
 
 # complier and options
-FC = gfortran
-FLAG = -fopenmp -O2 -cpp -fPIC
+FC = ifort
+FLAG = -qopenmp -ip -fpp -fPIC
 #DBAG = -check all -std -gen_interfaces -fpe0 -ftrapuv -traceback
 FLAGS = $(FLAG) $(DBAG)
 
 # directories
 libroot = ../../
-healpix = ${libroot}/Healpix/
-cfitsio = ${libroot}/cfitsio/
+# healpix = ${libroot}/Healpix/
+healpix = /home/yyli/software/Healpix_3.83/
+# cfitsio = ${libroot}/cfitsio/
+cfitsio = /cvmfs/spt.opensciencegrid.org/py3-v5/RHEL_9_x86_64/lib/
 
 # compile links
 MODD = -I$(healpix)/include

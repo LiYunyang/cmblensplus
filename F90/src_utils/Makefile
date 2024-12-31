@@ -6,7 +6,7 @@
 target = libutils.a
 
 # complier and options
-FC = ifort
+FC = ifort -diag-disable=10448
 FLAG = -O3 -fpp -fPIC
 #DBAG = -check all -std -gen_interfaces -fpe0 -ftrapuv -traceback
 FLAGS = $(FLAG) $(DBAG)
