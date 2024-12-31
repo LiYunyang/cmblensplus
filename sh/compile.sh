@@ -15,6 +15,8 @@ fi
 
 # compile
 if [ ${1} = "compile" -o ${1} = "all" -o ${1} = "dev" ]; then
+  export LD_RUN_PATH=/home/yyli/intel/oneapi/compiler/2024.2/lib 
+  # this is needed to hardcode the ifort library to so, due to the inability of the SPT jupyterhab to load the ifort library
   f2py --f90flags="${fflags}" --fcompiler=${f2pycomp} --noopt ${option} -c ${obj} -m ${target} 
   # save lib
   mv ${target}*.so ${wrapdir}/${target}.so
